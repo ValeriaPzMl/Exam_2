@@ -17,7 +17,6 @@ app.post('/superhero', async (req, res) => {
       const response = await fetch('https://akabab.github.io/superhero-api/api/all.json');
       const superheroes = await response.json();
   
-      // Filter superheroes by name (case-insensitive partial match)
       const matchedHeroes = superheroes.filter(hero =>
         hero.name.toLowerCase().includes(superheroName)
       );
