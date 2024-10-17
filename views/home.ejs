@@ -1,26 +1,19 @@
 <%- include('partials/header') %>
-<div style="align-items: center;">
 <h1>Superhero Information</h1>
-
-
 
 <% if (superheroes.length > 0) { %>
   <div class="superhero-list">
     <% superheroes.forEach(superhero => { %>
-      <div class="card" style="width: 18rem;padding: 10px;" style="background-color: aqua;">
-<img src="<%= superhero.images.md %>" alt="<%= superhero.name %>">
-
-  <div class="card-body" >
-    <h5 class="card-title"><%= superhero.name %></h5>
-    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-</div>
+      <div class="card" style="width: 18rem;">
+        <img src="<%= superhero.images.md %>" alt="<%= superhero.name %> " style="height: 350px;">
+        <div class="card-body">
+          <h5 class="card-title"><%= superhero.name %></h5>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     <% }) %>
   </div>
 <% } else { %>
   <p>No superheroes found with that name.</p>
 <% } %>
-</div>
 <%- include('partials/footer') %>
