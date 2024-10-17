@@ -6,22 +6,28 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
+
 app.get('/', (req, res) => {
   res.render('home', { superhero: null });
 });
 
 app.post('/superhero', async (req, res) => {
-  const superheroId = req.body.id;
-  try {
-    const fetch = (await import('node-fetch')).default;
-    const response = await fetch(`https://akabab.github.io/superhero-api/api/id/${superheroId}.json`);
-    const superhero = await response.json();
-    res.render('home', { superhero });
-  } catch (error) {
-    console.error('Error fetching superhero data:', error);
-    res.render('home', { superhero: null });
-  }
-});
+    const superheroName = req.body.name ? req.body.name.toLowerCase() : '';
+    try {
+      const response = await fetch('https://akabab.github.io/superhero-api/api/all.json');
+      const superheroes = await response.json();
+  
+      // Filter superheroes by name (case-insensitive partial match)
+      const matchedHeroes = superheroes.filter(hero =>
+        hero.name.toLowerCase().includes(superheroName)
+      );
+  
+      res.render('home', { superheroes: matchedHeroes });
+    } catch (error) {
+      console.error('Error fetching superhero data:', error);
+      res.render('home', { superheroes: [] });
+    }
+  });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

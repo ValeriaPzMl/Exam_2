@@ -2,22 +2,25 @@
 
 <h1>Superhero Information</h1>
 
-  <form action="/superhero" method="POST">
-    <input type="text" name="id" placeholder="Enter Superhero ID" required>
-    <button type="submit">Get Superhero Info</button>
-  </form>
+<form action="/superhero" method="POST">
+  <input type="text" name="name" placeholder="Enter Superhero Name" required>
+  <button type="submit">Search</button>
+</form>
 
-  <% if (superhero) { %>
-    <div class="superhero-info">
-      <h2><%= superhero.name %></h2>
-      <img src="<%= superhero.images.md %>" alt="<%= superhero.name %>">
-      <p><strong>Full Name:</strong> <%= superhero.biography.fullName %></p>
-      <p><strong>Publisher:</strong> <%= superhero.biography.publisher %></p>
-      <p><strong>Alignment:</strong> <%= superhero.biography.alignment %></p>
-      <p><strong>Powerstats:</strong> Intelligence: <%= superhero.powerstats.intelligence %>, Strength: <%= superhero.powerstats.strength %></p>
-    </div>
-  <% } else { %>
-    <p>No superhero data found.</p>
-  <% } %>
-
+<% if (superheroes.length > 0) { %>
+  <div class="superhero-list">
+    <% superheroes.forEach(superhero => { %>
+      <div class="superhero-info">
+        <h2><%= superhero.name %></h2>
+        <img src="<%= superhero.images.md %>" alt="<%= superhero.name %>">
+        <p><strong>Full Name:</strong> <%= superhero.biography.fullName %></p>
+        <p><strong>Publisher:</strong> <%= superhero.biography.publisher %></p>
+        <p><strong>Alignment:</strong> <%= superhero.biography.alignment %></p>
+        <p><strong>Powerstats:</strong> Intelligence: <%= superhero.powerstats.intelligence %>, Strength: <%= superhero.powerstats.strength %></p>
+      </div>
+    <% }) %>
+  </div>
+<% } else { %>
+  <p>No superheroes found with that name.</p>
+<% } %>
 <%- include('partials/footer') %>
