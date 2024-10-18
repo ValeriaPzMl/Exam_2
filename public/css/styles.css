@@ -26,13 +26,6 @@ img{
     padding: 50px; /* Espacio alrededor del contenedor */
   }
   
-  .card {
-    border: 5px solid aqua;
-    padding: 10px;
-    flex: 0 1 calc(30% - 20px); /* Cada carta ocupará aproximadamente un tercio del contenedor */
-    margin: 10px; /* Espacio entre las cartas */
-    box-sizing: border-box; /* Incluir padding y margin en el ancho total */
-  }
   
   .btn{
     background-color: red;
