@@ -1,4 +1,5 @@
 const express = require('express');
+const https = require('https'); // Importamos el módulo https de Node.js
 const app = express();
 const PORT = 3000;
 
@@ -6,30 +7,85 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
-// Ruta GET inicial
+// Ruta GET inicial que muestra todos los superhéroes
 app.get('/', (req, res) => {
-  // Pasa un arreglo vacío en lugar de null
-  res.render('home', { superheroes: [] });
+  const url = 'https://akabab.github.io/superhero-api/api/all.json';
+
+  // Realizamos la solicitud GET usando el módulo https
+  https.get(url, (response) => {
+    let data = '';
+
+    // Verifica si la respuesta fue exitosa
+    if (response.statusCode !== 200) {
+      console.error(`Error: Failed to fetch data. Status Code: ${response.statusCode}`);
+      res.render('home', { superheroes: [] });
+      return;
+    }
+
+    // Recibimos los datos por fragmentos
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+
+    // Una vez que se ha recibido toda la respuesta, procesamos los datos
+    response.on('end', () => {
+      try {
+        const superheroes = JSON.parse(data);
+        console.log('Número de superhéroes obtenidos:', superheroes.length);
+        // Renderiza la vista con todos los superhéroes
+        res.render('home', { superheroes });
+      } catch (error) {
+        console.error('Error al analizar los datos de los superhéroes:', error);
+        res.render('home', { superheroes: [] });
+      }
+    });
+  }).on('error', (error) => {
+    console.error('Error al realizar la solicitud HTTPS:', error);
+    res.render('home', { superheroes: [] });
+  });
 });
 
 // Ruta POST para buscar superhéroes
-app.post('/superhero', async (req, res) => {
+app.post('/superhero', (req, res) => {
   const superheroName = req.body.name ? req.body.name.toLowerCase() : '';
-  try {
-    const response = await fetch('https://akabab.github.io/superhero-api/api/all.json');
-    const superheroes = await response.json();
+  const url = 'https://akabab.github.io/superhero-api/api/all.json';
 
-    // Filtra los superhéroes que coinciden con la búsqueda
-    const matchedHeroes = superheroes.filter(hero =>
-      hero.name.toLowerCase().includes(superheroName)
-    );
+  // Realizamos la solicitud GET usando el módulo https
+  https.get(url, (response) => {
+    let data = '';
 
-    // Renderiza la vista con los superhéroes encontrados
-    res.render('home', { superheroes: matchedHeroes });
-  } catch (error) {
-    console.error('Error fetching superhero data:', error);
+    // Verifica si la respuesta fue exitosa
+    if (response.statusCode !== 200) {
+      console.error(`Error: Failed to fetch data. Status Code: ${response.statusCode}`);
+      res.render('home', { superheroes: [] });
+      return;
+    }
+
+    // Recibimos los datos por fragmentos
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+
+    // Una vez que se ha recibido toda la respuesta, procesamos los datos
+    response.on('end', () => {
+      try {
+        const superheroes = JSON.parse(data);
+
+        // Filtra los superhéroes que coinciden con la búsqueda
+        const matchedHeroes = superheroes.filter(hero =>
+          hero.name.toLowerCase().includes(superheroName)
+        );
+
+        res.render('home', { superheroes: matchedHeroes });
+      } catch (error) {
+        console.error('Error al analizar los datos de los superhéroes:', error);
+        res.render('home', { superheroes: [] });
+      }
+    });
+  }).on('error', (error) => {
+    console.error('Error al realizar la solicitud HTTPS:', error);
     res.render('home', { superheroes: [] });
-  }
+  });
 });
 
 // Iniciar servidor
