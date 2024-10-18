@@ -1,18 +1,18 @@
 body{
-    font-family: "DotGothic16", sans-serif;
+    font-family: "DotGothic16", sans-serif!important;
 }
 .cards{
     background-color: #FFC107!important; 
-    color: #bb0416;
-    padding: 10px;
-    border-color: #000000;
+    color: #bb0416!important;
+    padding: 10px!important;
+    border-color: #007BFF!important;
 }
 h4{
-    font-family: "Bangers", system-ui;
+    font-family: "Bangers", system-ui!important;
     
 }
 img{
-    border-radius: 5px;
+    border-radius: 5px!important;
 
 }
 .bott{
@@ -33,18 +33,18 @@ img{
   }
 .bott:hover{
     background-color: #820404!important;
-    padding: 10px;
-    color: black;
-    font-weight: bolder;
-    border: black;
+    padding: 10px!important;
+    color: black!important;
+    font-weight: bolder!important;
+    border: black!important;
 }
 .navv{
     background-color: #007BFF!important;
     
 }
 h1{
-    color: white!important;
-    font-family: "Bangers", system-ui;
+    color: #FFC107!important;
+    font-family: "Bangers", system-ui!important;
     font-size: 50px!important;
     font-weight: 300!important;
 }
@@ -56,37 +56,38 @@ h1{
   }
 
   .carrd {
-    background-color: #1a1a40; /* Azul oscuro para el fondo de la tarjeta */
-    color: #e6e6e6; /* Texto en blanco/gris claro */
-    border-radius: 15px;
-    padding: 20px;
+    background-color: #1a1a40!important; /* Azul oscuro para el fondo de la tarjeta */
+    color: #e6e6e6!important; /* Texto en blanco/gris claro */
+    border-radius: 15px!important;
+    padding: 20px!important;
   }
 
   .carrd img {
     margin: 15px!important; /* Agregar margen alrededor de la imagen */
-    border-radius: 10px;
+    border-radius: 10px!important;
   }
 
   .name {
-    font-family: "Bangers", system-ui;
+    font-family: "Bangers", system-ui!important;
     color: #bb0416 !important; /* Título en rojo brillante */
-    font-size: 2rem;
+    font-size: 2rem!important;
   }
   .progress-bar {
-    border-radius: 5px;
+    border-radius: 5px!important;
   }
 
   .progress {
-    height: 1.5rem; /* Ajusta la altura de las barras de progreso */
+    height: 1.5rem!important; /* Ajusta la altura de las barras de progreso */
   }
 
   .powerstats-container {
-    margin-top: 30px;
+    margin-top: 30px!important;
   }
   .powerstats-container h3 {
-    color: #ffc107; /* Amarillo brillante para los subtítulos */
+    color: #ffc107!important; /* Amarillo brillante para los subtítulos */
   }
   .datos{
-    padding-left:  50px;
+    padding-left:  50px!important;
+    font-size: 20px;
 
   }
