@@ -1,5 +1,6 @@
 <%- include('partials/header') %>
-<!--ejemplo harcodeado -->
+
+<!--ejemplo harcodeado 
 <div class="gen2 container">
 
     <div class="carrd card mb-5">
@@ -50,69 +51,78 @@
       </div>
     </div>
   </div>
-
-<!--tarjeta recibiendo superheroe
+-->
+<!--tarjeta recibiendo superheroe-->
 <div class="gen2 container">
+  <div class="card mb-5">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%= superhero.images.md %>" class="card-img-top" alt="<%= superhero.name %>">
+      </div>
+      <div class="col-md-8">
+        <div class="datos card-body">
+          <h1 class="name card-title"><%= superhero.name %> <span>(ID: <%= superhero.id %>)</span></h1>
+          <p><strong>Full Name:</strong> <%= superhero.biography.fullName %></p>
+          <p><strong>Place of Birth:</strong> <%= superhero.biography.placeOfBirth %></p>
+          <p><strong>Gender:</strong> <%= superhero.appearance.gender %></p>
+          <p><strong>Race:</strong> <%= superhero.appearance.race %></p>
+          <p><strong>Height:</strong> <%= superhero.appearance.height[0] %> (<%= superhero.appearance.height[1] %>)</p>
+          <p><strong>Weight:</strong> <%= superhero.appearance.weight[0] %> (<%= superhero.appearance.weight[1] %>)</p>
+          <p><strong>Eye Color:</strong> <%= superhero.appearance.eyeColor %></p>
+          <p><strong>Hair Color:</strong> <%= superhero.appearance.hairColor %></p>
+          <p><strong>Aliases:</strong> <%= superhero.biography.aliases.join(', ') %></p>
+          <p><strong>Group Affiliation:</strong> <%= superhero.connections.groupAffiliation %></p>
+          <p><strong>Biography:</strong> <%= superhero.work.occupation %></p>
+        </div>
+      </div>
 
-    <div class="carrd card mb-5">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="<%= superhero.images.lg %>" class="img-fluid" alt="<%= superhero.name %>">
-        </div>
-        <div class="col-md-8">
-          <div class="datos card-body">
-  
-            <h1 class="name card-title"><%= superhero.name %> <h2>(ID: <%= superhero.id %>)</h2></h1>
-            <p><strong>Full Name:</strong> <%= superhero.biography.fullName %></p>
-            <p><strong>Place of Birth:</strong> <%= superhero.biography.placeOfBirth %></p>
-            <p><strong>Gender:</strong> <%= superhero.appearance.gender %></p>
-            <p><strong>Race:</strong> <%= superhero.appearance.race %></p>
-            <p><strong>Height:</strong> <%= superhero.appearance.height[0] %> (<%= superhero.appearance.height[1] %>)</p>
-            <p><strong>Weight:</strong> <%= superhero.appearance.weight[0] %> (<%= superhero.appearance.weight[1] %>)</p>
-            <p><strong>Eye Color:</strong> <%= superhero.appearance.eyeColor %></p>
-            <p><strong>Hair Color:</strong> <%= superhero.appearance.hairColor %></p>
-            <p><strong>Aliases:</strong> <%= superhero.biography.aliases.join(', ') %></p>
-            <p><strong>Group Affiliation:</strong> <%= superhero.connections.groupAffiliation %></p>
-            <p><strong>Biography:</strong> <%= superhero.work.occupation %></p>
+      <div class="powerstats-container col-md-12">
+        <h3>Powerstats</h3>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-info" role="progressbar" style="width: <%= superhero.powerstats.intelligence %>%;" aria-valuenow="<%= superhero.powerstats.intelligence %>" aria-valuemin="0" aria-valuemax="100">
+            Intelligence: <%= superhero.powerstats.intelligence %>%
           </div>
         </div>
-  
-     
-        <div class="powerstats-container col-md-12">
-          <h3>Powerstats</h3>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-info" role="progressbar" style="width: <%= superhero.powerstats.intelligence %>%;" aria-valuenow="<%= superhero.powerstats.intelligence %>" aria-valuemin="0" aria-valuemax="100">
-              Intelligence: <%= superhero.powerstats.intelligence %>%
-            </div>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-danger" role="progressbar" style="width: <%= superhero.powerstats.strength %>%;" aria-valuenow="<%= superhero.powerstats.strength %>" aria-valuemin="0" aria-valuemax="100">
+            Strength: <%= superhero.powerstats.strength %>%
           </div>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-danger" role="progressbar" style="width: <%= superhero.powerstats.strength %>%;" aria-valuenow="<%= superhero.powerstats.strength %>" aria-valuemin="0" aria-valuemax="100">
-              Strength: <%= superhero.powerstats.strength %>%
-            </div>
+        </div>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: <%= superhero.powerstats.speed %>%;" aria-valuenow="<%= superhero.powerstats.speed %>" aria-valuemin="0" aria-valuemax="100">
+            Speed: <%= superhero.powerstats.speed %>%
           </div>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-warning" role="progressbar" style="width: <%= superhero.powerstats.speed %>%;" aria-valuenow="<%= superhero.powerstats.speed %>" aria-valuemin="0" aria-valuemax="100">
-              Speed: <%= superhero.powerstats.speed %>%
-            </div>
+        </div>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-success" role="progressbar" style="width: <%= superhero.powerstats.durability %>%;" aria-valuenow="<%= superhero.powerstats.durability %>" aria-valuemin="0" aria-valuemax="100">
+            Durability: <%= superhero.powerstats.durability %>%
           </div>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-success" role="progressbar" style="width: <%= superhero.powerstats.durability %>%;" aria-valuenow="<%= superhero.powerstats.durability %>" aria-valuemin="0" aria-valuemax="100">
-              Durability: <%= superhero.powerstats.durability %>%
-            </div>
+        </div>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <%= superhero.powerstats.power %>%;" aria-valuenow="<%= superhero.powerstats.power %>" aria-valuemin="0" aria-valuemax="100">
+            Power: <%= superhero.powerstats.power %>%
           </div>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: <%= superhero.powerstats.power %>%;" aria-valuenow="<%= superhero.powerstats.power %>" aria-valuemin="0" aria-valuemax="100">
-              Power: <%= superhero.powerstats.power %>%
-            </div>
-          </div>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-secondary" role="progressbar" style="width: <%= superhero.powerstats.combat %>%;" aria-valuenow="<%= superhero.powerstats.combat %>" aria-valuemin="0" aria-valuemax="100">
-              Combat: <%= superhero.powerstats.combat %>%
-            </div>
+        </div>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-secondary" role="progressbar" style="width: <%= superhero.powerstats.combat %>%;" aria-valuenow="<%= superhero.powerstats.combat %>" aria-valuemin="0" aria-valuemax="100">
+            Combat: <%= superhero.powerstats.combat %>%
           </div>
         </div>
       </div>
     </div>
-  </div>-->
-  
+    
+    <!-- Navegación -->
+    <div class="navigation mt-4">
+      <% if (previousHero) { %>
+        <a href="/superhero/<%= previousHero.id %>" class="btn btn-secondary">← Anterior: </a>
+      <% } %>
+      <% if (nextHero) { %>
+        <a href="/superhero/<%= nextHero.id %>" class="btn btn-secondary">Siguiente:→</a>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+
 <%- include('partials/footer') %>
+

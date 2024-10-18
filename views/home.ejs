@@ -13,12 +13,13 @@
             <div class="card-body">
               <h4 class="card-title"><%= superhero.name %></h4>
               <!-- Botón que eventualmente llevará al perfil completo -->
-              <a href="#" class="bott btn btn-primary">View Profile</a>
+              <a href="/superhero/<%= superhero.id %>" class="bott btn btn-primary">View Profile</a>
             </div>
           </div>
         </div>
       <% }) %>
     </div>
+    
   <% } else { %>
     <p class="text-center">No superheroes found with that name.</p>
   <% } %>
