@@ -5,7 +5,7 @@
 
   <% if (superheroes.length > 0) { %>
     <div class="row">
-      <% superheroes.forEach((superhero, index) => { %>
+      <% superheroes.forEach((superhero, index) => { %>-->
         <!-- Cada tarjeta de superhéroe -->
         <div class="col-md-4 mb-4 d-flex justify-content-center">
           <div class="cards card" style="width: 18rem;">
@@ -23,4 +23,5 @@
     <p class="text-center">No superheroes found with that name.</p>
   <% } %>
 </div>
+
 <%- include('partials/footer') %>

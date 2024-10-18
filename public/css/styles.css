@@ -30,7 +30,8 @@ img{
   .btn{
     background-color: red;
     width: 100%;
-  }.bott:hover{
+  }
+.bott:hover{
     background-color: #820404!important;
     padding: 10px;
     color: black;
@@ -48,5 +49,44 @@ h1{
     font-weight: 300!important;
 }
 .gen{
-    margin-top: 150px!important;
+    margin-top: 60px!important;
 }
+.gen2 {
+    margin-top: 100px !important;
+  }
+
+  .carrd {
+    background-color: #1a1a40; /* Azul oscuro para el fondo de la tarjeta */
+    color: #e6e6e6; /* Texto en blanco/gris claro */
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .carrd img {
+    margin: 15px!important; /* Agregar margen alrededor de la imagen */
+    border-radius: 10px;
+  }
+
+  .name {
+    font-family: "Bangers", system-ui;
+    color: #bb0416 !important; /* Título en rojo brillante */
+    font-size: 2rem;
+  }
+  .progress-bar {
+    border-radius: 5px;
+  }
+
+  .progress {
+    height: 1.5rem; /* Ajusta la altura de las barras de progreso */
+  }
+
+  .powerstats-container {
+    margin-top: 30px;
+  }
+  .powerstats-container h3 {
+    color: #ffc107; /* Amarillo brillante para los subtítulos */
+  }
+  .datos{
+    padding-left:  50px;
+
+  }
