@@ -1,3 +1,40 @@
 body{
-    background-color: black;
+    font-family: "DotGothic16", sans-serif;
+}
+.cards{
+    background-color: #FFC107!important; 
+    color: #bb0416;
+    padding: 10px;
+    border-color: #000000;
+}
+h4{
+    font-family: "Bangers", system-ui;
+    
+}
+img{
+    border-radius: 5px;
+
+}
+.bott{
+    background-color: #007BFF!important;
+}
+.bott:hover{
+    background-color: #820404!important;
+    padding: 10px;
+    color: black;
+    font-weight: bolder;
+    border: black;
+}
+.navv{
+    background-color: #007BFF!important;
+    
+}
+h1{
+    color: white!important;
+    font-family: "Bangers", system-ui;
+    font-size: 50px!important;
+    font-weight: 300!important;
+}
+.gen{
+    margin-top: 150px!important;
 }
