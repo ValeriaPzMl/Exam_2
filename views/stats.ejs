@@ -5,13 +5,16 @@
   <div class="carrd card mb-5">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="<%= superhero.images.md %>" class="card-img-top"  style="height: 90%;width: 85%;"  alt="<%= superhero.name %>">
+        <img src="<%= superhero.images.md %>" class="card-img-top" alt="<%= superhero.name %>">
       </div>
       <div class="col-md-8">
         <div class="datos card-body">
-          <h1 class="name card-title">
-            <%= superhero.name || 'unknown' %> <span>(ID: <%= superhero.id || 'Unknown' %>)</span>
-          </h1>
+            
+                <h1 class="name card-title">
+                  <%= superhero.name || 'unknown' %>  
+                </h1>
+                <p><strong>ID:</strong> <%= superhero.id || 'Unknown' %></p>
+              
           <p><strong>Full Name:</strong> <%= superhero.biography.fullName || 'Unknown' %></p>
           <p><strong>Place of Birth:</strong> <%= superhero.biography.placeOfBirth || 'Unknown' %></p>
           <p><strong>Gender:</strong> <%= superhero.appearance.gender || 'Unknown' %></p>
@@ -62,14 +65,14 @@
     </div>
     
     <!-- Navegación -->
-    <div class="navigation mt-4">
-      <% if (previousHero) { %>
-        <a href="/superhero/<%= previousHero.id %>" class="btn btn-secondary">← Anterior: </a>
-      <% } %>
-      <% if (nextHero) { %>
-        <a href="/superhero/<%= nextHero.id %>" class="btn btn-secondary">Siguiente:→</a>
-      <% } %>
-    </div>
+    <div class="navigation mt-4 d-flex justify-content-between">
+        <% if (previousHero) { %>
+          <a href="/superhero/<%= previousHero.id %>" class="btn btn-secondary btn-sm" style="width: 60%;margin-right: 20%;" >← Anterior</a>
+        <% } %>
+        <% if (nextHero) { %>
+          <a href="/superhero/<%= nextHero.id %>" class="btn btn-secondary btn-sm" style="width: 60%;margin-left: 20%;">Siguiente →</a>
+        <% } %>
+      </div>
   </div>
 </div>
 

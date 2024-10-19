@@ -1,12 +1,13 @@
 body{
     font-family: "DotGothic16", sans-serif!important;
     background-color: #f0f0f0;
+    color: #F0F0F0!important;
 }
 .cards{
-    background-color: #FFC107!important; 
-    color: #bb0416!important;
+    background-color: #ddb047!important; 
+    color: #D62828!important;
     padding: 10px!important;
-    border-color: #007BFF!important;
+    border-color: #005A9C!important;
 }
 h4{
     font-family: "Bangers", system-ui!important;
@@ -17,7 +18,8 @@ img{
 
 }
 .bott{
-    background-color: #007BFF!important;
+    background-color: #005A9C!important;
+    color: #FAF3E0!important;
 }
 
 .superhero-list {
@@ -40,7 +42,7 @@ img{
     border: black!important;
 }
 .navv{
-    background-color: #007BFF!important;
+    background-color: #005A9C!important;
     
 }
 h1{
@@ -57,22 +59,24 @@ h1{
   }
 
   .carrd {
-    background-color: #1a1a40!important; /* Azul oscuro para el fondo de la tarjeta */
+    background-color: #002a4b!important; /* Azul oscuro para el fondo de la tarjeta */
     color: #e6e6e6!important; /* Texto en blanco/gris claro */
     border-radius: 15px!important;
     padding: 20px!important;
   }
 
   .carrd img {
-    margin-left:7% ;
-    margin-top: 7%; /* Agregar margen alrededor de la imagen */
-    border-radius: 10px!important;
+    max-width: 85%!important;  /* La imagen nunca será más grande que el contenedor */
+    height: auto!important;     /* Mantener la proporción de la imagen */
+    object-fit: cover!important; /* Llenar el contenedor sin estirarse (o cambiar por "contain" si prefieres que no se corte) *//* Esquinas redondeadas (ajustar según prefieras) */
+    margin-top: 7%;
+    margin-left: 7%;
   }
 
   .name {
     font-family: "Bangers", system-ui!important;
-    color: #bb0416 !important; /* Título en rojo brillante */
-    font-size: 2rem!important;
+    color: #D62828 !important; /* Título en rojo brillante */
+    font-size: 3rem!important;
   }
   .progress-bar {
     border-radius: 5px!important;
@@ -91,4 +95,21 @@ h1{
   .datos{
 
 
+  }
+  .navigation a {
+    padding: 5px 10px; /* Tamaño personalizado */
+    font-size: 0.9rem;  /* Reducir tamaño de la fuente */
+    background-color: #005A9C!important;
+    color: #FAF3E0!important;
+    border-color: #005A9C;
+  }
+  .navigation a:hover{
+    background-color: #820404!important;
+    padding: 10px!important;
+    color: black!important;
+    font-weight: bolder!important;
+    border: black!important;
+  }
+  .navigation {
+    margin-top: 20px;
   }
