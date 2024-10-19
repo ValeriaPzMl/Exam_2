@@ -61,18 +61,20 @@
       </div>
       <div class="col-md-8">
         <div class="datos card-body">
-          <h1 class="name card-title"><%= superhero.name %> <span>(ID: <%= superhero.id %>)</span></h1>
-          <p><strong>Full Name:</strong> <%= superhero.biography.fullName %></p>
-          <p><strong>Place of Birth:</strong> <%= superhero.biography.placeOfBirth %></p>
-          <p><strong>Gender:</strong> <%= superhero.appearance.gender %></p>
-          <p><strong>Race:</strong> <%= superhero.appearance.race %></p>
-          <p><strong>Height:</strong> <%= superhero.appearance.height[0] %> (<%= superhero.appearance.height[1] %>)</p>
-          <p><strong>Weight:</strong> <%= superhero.appearance.weight[0] %> (<%= superhero.appearance.weight[1] %>)</p>
-          <p><strong>Eye Color:</strong> <%= superhero.appearance.eyeColor %></p>
-          <p><strong>Hair Color:</strong> <%= superhero.appearance.hairColor %></p>
-          <p><strong>Aliases:</strong> <%= superhero.biography.aliases.join(', ') %></p>
-          <p><strong>Group Affiliation:</strong> <%= superhero.connections.groupAffiliation %></p>
-          <p><strong>Biography:</strong> <%= superhero.work.occupation %></p>
+          <h1 class="name card-title">
+            <%= superhero.name || 'unknown' %> <span>(ID: <%= superhero.id || 'Unknown' %>)</span>
+          </h1>
+          <p><strong>Full Name:</strong> <%= superhero.biography.fullName || 'Unknown' %></p>
+          <p><strong>Place of Birth:</strong> <%= superhero.biography.placeOfBirth || 'Unknown' %></p>
+          <p><strong>Gender:</strong> <%= superhero.appearance.gender || 'Unknown' %></p>
+          <p><strong>Race:</strong> <%= superhero.appearance.race || 'Unknown' %></p>
+          <p><strong>Height:</strong> <%= (superhero.appearance.height[0] || 'Unknown') + ' (' + (superhero.appearance.height[1] || 'Unknown') + ')' %></p>
+          <p><strong>Weight:</strong> <%= (superhero.appearance.weight[0] || 'Unknown') + ' (' + (superhero.appearance.weight[1] || 'Unknown') + ')' %></p>
+          <p><strong>Eye Color:</strong> <%= superhero.appearance.eyeColor || 'Unknown' %></p>
+          <p><strong>Hair Color:</strong> <%= superhero.appearance.hairColor || 'Unknown' %></p>
+          <p><strong>Aliases:</strong> <%= superhero.biography.aliases.length > 0 ? superhero.biography.aliases.join(', ') : 'Unknown' %></p>
+          <p><strong>Group Affiliation:</strong> <%= superhero.connections.groupAffiliation || 'Unknown' %></p>
+          <p><strong>Biography:</strong> <%= superhero.work.occupation || 'Unknown' %></p>
         </div>
       </div>
 
