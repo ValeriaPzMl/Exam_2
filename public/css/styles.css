@@ -1,5 +1,6 @@
 body{
     font-family: "DotGothic16", sans-serif!important;
+    background-color: #f0f0f0;
 }
 .cards{
     background-color: #FFC107!important; 
@@ -52,7 +53,7 @@ h1{
     margin-top: 60px!important;
 }
 .gen2 {
-    margin-top: 100px !important;
+    margin-top: 150px !important;
   }
 
   .carrd {
@@ -63,7 +64,8 @@ h1{
   }
 
   .carrd img {
-    margin: 15px!important; /* Agregar margen alrededor de la imagen */
+    margin-left:7% ;
+    margin-top: 7%; /* Agregar margen alrededor de la imagen */
     border-radius: 10px!important;
   }
 
@@ -87,7 +89,6 @@ h1{
     color: #ffc107!important; /* Amarillo brillante para los subtítulos */
   }
   .datos{
-    padding-left:  50px!important;
-    font-size: 20px;
+
 
   }
